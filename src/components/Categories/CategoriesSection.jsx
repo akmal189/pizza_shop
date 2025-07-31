@@ -4,7 +4,7 @@ export default function Categories({activeCategory, onClick}) {
     const categories = useSelector(state => state.categories.categories);
     
     return (
-        <div className="flex items-center justify-center gap-2.5">
+        <div className="flex flex-wrap items-center justify-center gap-2.5">
             {categories.map((item, index) => (
                 <button
                     key={item.id}

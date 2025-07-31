@@ -16,7 +16,7 @@ export default function App() {
     <div className="site-wrapper max-w-[1400px] my-12 mx-auto bg-white rounded-2xl">
       <Header />
       <main className="p-10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-5">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-5">
           <Categories activeCategory={activeCategory} onClick={handleCategoryClick} />
           <SortSection />
         </div>

@@ -55,7 +55,7 @@ export default function ProductList({titleText, activeCategory}) {
     return (
         <section className="max-w-7xl mx-auto">
             <h1 className="font-bold my-12 text-4xl">{titleText}</h1>
-            <div className="grid grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
                 {products.filter(product => activeCategory === 0 || product.folder_id === activeCategory).map((product) => (
                 <div key={product.id}>
                     {product.image && (

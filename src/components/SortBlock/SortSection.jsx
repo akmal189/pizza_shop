@@ -8,6 +8,7 @@ export default function SortBlock() {
     };
     const handleSortChange = (type) => {
         setSortType(type);
+        setIsPopupVisible(prev => !prev);
         // Add sorting logic here if needed
     };
     return (

@@ -3,7 +3,7 @@ import logo from '../../assets/img/pizza-logo.svg';
 export default function Header() {
     return (
         <header className="site-header px-5 border-b border-gray-200">
-            <div className="max-w-7xl mx-auto py-10 flex items-center justify-between gap-5">
+            <div className="max-w-7xl mx-auto py-10 flex flex-wrap items-center justify-between gap-5">
                 <div className="flex items-center gap-3.5">
                     <div>
                         <img src={logo} alt="logo" className="w-9" />

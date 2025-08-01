@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/img/pizza-logo.svg';
 
 export default function Header() {
@@ -6,10 +7,12 @@ export default function Header() {
             <div className="max-w-7xl mx-auto py-10 flex flex-wrap items-center justify-between gap-5">
                 <div className="flex items-center gap-3.5">
                     <div>
-                        <img src={logo} alt="logo" className="w-9" />
+                        <Link to="/">
+                            <img src={logo} alt="logo" className="w-9" />
+                        </Link>
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold">React Pizza</h1>
+                        <Link to="/" className="text-2xl font-bold">React Pizza</Link>
                         <p className="text-gray-500">самая вкусная пицца во вселенной!</p>
                     </div>
                 </div>
@@ -21,7 +24,7 @@ export default function Header() {
                         <input type="text" className="border border-gray-400 rounded-xl py-2.5 px-5 pl-10" placeholder="Поиск пиццы..." />
                     </form>
                 </div>
-                <div className="flex items-center gap-5 bg-primary-500 rounded-4xl px-5 py-2.5 text-white text-base">
+                <Link to="/cart" className="flex items-center gap-5 bg-primary-500 rounded-4xl px-5 py-2.5 text-white text-base">
                     <div>0 р.</div>
                     <div>|</div>
                     <div className="flex items-center">
@@ -30,7 +33,7 @@ export default function Header() {
                         </div>
                         <span>0</span>
                     </div>
-                </div>
+                </Link>
             </div>
         </header>
     )

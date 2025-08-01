@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../actions/productActions";
+import ProductsSkeleton from "./ProductsSkeleton";
 
 export default function ProductList({titleText, activeCategory}) {
     const dispatch = useDispatch();
@@ -49,7 +50,16 @@ export default function ProductList({titleText, activeCategory}) {
         }
     }, [products]);
 
-    if (loading) return <p>Загрузка...</p>;
+    if (loading) return (
+        <section className="max-w-7xl mx-auto">
+            <h1 className="font-bold my-12 text-4xl">{titleText}</h1>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+                {Array.from({ length: 8 }).map((_, index) => (
+                    <ProductsSkeleton key={index} />
+                ))}
+            </div>
+        </section>
+    );
     if (error) return <p>Ошибка: {error}</p>;
 
     return (
@@ -59,7 +69,7 @@ export default function ProductList({titleText, activeCategory}) {
                 {products.filter(product => activeCategory === 0 || product.folder_id === activeCategory).map((product) => (
                 <div key={product.id}>
                     {product.image && (
-                        <div className="mb-4 text-center">
+                        <div className="mb-4 flex items-center justify-center px-5">
                             <img
                             src={product.image}
                             alt={product.name}
